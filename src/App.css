@@ -1,0 +1,206 @@
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  font-family: 'Encode sans Expanded' , sans-serif;
+}
+
+.deck {
+  background-image: url("./images/deck.png");
+  background-size: 400px 303px;
+  width: 400px;
+  height: 303px;
+  margin: 20px;
+}
+
+.deck:hover {
+  transform: scale(1.1); 
+}
+
+#successMsg, #errorMsg {
+  width: 40%;
+  left:30%;
+  position: fixed;
+  bottom: 5%;
+  z-index: 10; 
+  overflow-y: hidden; /* Disable horizontal scroll */
+  border-radius: 15px;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+  font-size: xx-large;
+  padding: 10px 10px;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  background-color: #1CAC78;
+  color: white;
+}
+  
+#errorMsg {
+  background-color: #fd5c63;
+}
+
+img {
+  height:auto
+}
+
+#testCard, #flipTestCard  {
+  width: 750px;
+  height: 420px;
+  position: fixed;
+  z-index: 1;
+  top: 445px;
+}
+
+.cardButtons {
+  position:absolute;                
+  bottom:0;  
+}
+
+ul{
+  list-style: none
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 400px;
+  height: 224px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  display: inline-block;
+  margin: 25px;
+  box-shadow: 2;
+
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+#testCard:hover .flip-card-inner {
+  transform: rotateY(0deg);
+}
+
+#flipTestCard .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #72C9FF;
+  color: black;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #EFFF72;
+  color: black;
+  transform: rotateY(180deg);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+#testCard .flip-card-front, #flipTestCard .flip-card-back {
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#mainTitle {
+  margin-top: 80px;
+  font-size: 80px;
+  font-weight: 100;
+}
+
+#mainSubtitle {
+  color: slategray;
+  margin-bottom: 20px;
+}
+
+.cardFront, .cardBack {
+  border-style: solid;
+  margin-left: 20px;
+  width: 600px;
+  height: 336px;
+  border-radius: 15px;
+  border-color: slategray;
+}
+
+.createdCard {
+  border-style: solid;
+  margin: 20px 20px;
+  width: 500px;
+  height: 280px;
+  border-radius: 15px;
+  border-color: slategray;
+  background-color: #EFFF72;
+
+}
+
+#watermelon.cardFront {
+  background-color: #65E579
+}
+#watermelon.cardBack {
+  background-color: #FF7272
+}
+
+#default.cardFront {
+  background-color: #72C9FF;
+}
+#default.cardBack {
+  background-color: #EFFF72;
+}
+
+#grapefruit.cardFront {
+  background-color: #FFBC52
+}
+#grapefruit.cardBack {
+  background-color: #FF5353
+}
+
+
+
+/* #grapefruit.createCardFront {
+  background-color: #FFBC52
+}
+#grapefruit.createCardBack {
+  background-color: #FF5353;
+  border-radius: 10px;
+  height:100%;
+  display:block;
+}
+
+#default.createCardFront {
+  background-color: #72C9FF;
+}
+#default.createCardBack {
+  background-color: #EFFF72;
+  border-radius: 10px;
+  height:100%;
+  display:block;
+} */
+
+/* #footer {
+  position: relative;
+	bottom: 0;
+  width:100%
+} */
